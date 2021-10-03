@@ -14,7 +14,7 @@ class Trie {
         let curr = this.root;
         for(let i = 0; i < word.length; i++) {
             // map to value between 0-25 (a-z)
-            let index = word.charCodeAt(i) - 'a';
+            let index = word.charCodeAt(i) - 97;
             if(!curr.pointers[index]) {
                 curr.pointers[index] = new this.Node();
             }
@@ -26,7 +26,7 @@ class Trie {
     search = (word) => {
         let curr = this.root;
         for(let i = 0; i < word.length; i++) {
-            let index = word.charCodeAt(i) - 'a';
+            let index = word.charCodeAt(i) - 97;
             if(!curr.pointers[index]) {
                 return false;
             }
@@ -38,7 +38,7 @@ class Trie {
     startsWith = (word) => {
         let curr = this.root;
         for(let i = 0; i < word.length; i++) {
-            let index = word.charCodeAt(i) - 'a';
+            let index = word.charCodeAt(i) - 97;
             if(!curr.pointers[index]) {
                 return false;
             }
