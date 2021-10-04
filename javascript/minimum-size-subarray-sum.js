@@ -22,3 +22,5 @@ var minSubArrayLen = function(target, nums) {
     if(!isSolution) return 0;
     return min;
 };
+
+// Uses 2 pointer / sliding window pattern
