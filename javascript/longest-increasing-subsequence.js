@@ -26,3 +26,7 @@ const dynamicLIS = (nums, index, prevIndex, memo) => {
     memo[index][prevIndex] = Math.max(option1, option2);
     return memo[index][prevIndex];
 }
+
+// trickiest part about this problem is figuring out how to cache values properly
+// We cannot use just a 1D array for cache because at each index we have 2 possible options to consider :
+// either the number at index i is in opt or not in opt.  We can identify previous work by caching the current index and previous index pair.
