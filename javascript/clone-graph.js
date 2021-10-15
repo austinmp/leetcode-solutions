@@ -25,9 +25,9 @@ const recursiveClone = (node, map) => {
     map.set(node.val, n);
     
     for(let i = 0; i < node.neighbors.length; i++ ) {
-        if(!map.has(node.neighbors[i].val) ) recursiveClone(node.neighbors[i], map)
-        let neighbor = map.get(node.neighbors[i].val);
-        neighbor.neighbors.push(n);
+        if(!map.has(node.neighbors[i].val) ) recursiveClone(node.neighbors[i], map);    // create neighbor if doesnt exist
+        let neighbor = map.get(node.neighbors[i].val);                                  // neighbor now in map
+        neighbor.neighbors.push(n);                                                     // add self to neighbors' neighbor list
     }
 }
 
