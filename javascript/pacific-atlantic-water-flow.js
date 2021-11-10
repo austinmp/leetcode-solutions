@@ -69,3 +69,14 @@ const dfs = (i, j, heights, explored) => {
 }
 
 
+
+
+/*
+    The hardest part about this problem is the misleading discription. The problem isnt asking if you can find a path starting from,
+    1 ocean to get to the other, it is asking if rainwater falls on some tile in the grid (on the island) can it form a stream from 
+    that point, to both oceans. We are looking to start from highground on the island, and flow to lowground towards the shore. I often
+    get confused with this problem and think we should start from the highground on the coast, and then flow to the other coast.
+    Its a subtle difference that can be fixed by just flipping the comparison opperator for checking highground. 
+    We start from the ocean, and if the next space is greater than or equal to the current spot, we can advance.  Effectively, we are
+    doing a search from the end of the river, up stream, not the other way around.
+*/
